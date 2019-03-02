@@ -17,9 +17,9 @@ namespace WSMediaServer
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new WSMediaServer()
             };
-            ServiceBase.Run(ServicesToRun);
+            //ServiceBase.Run(ServicesToRun);
         }
     }
 }

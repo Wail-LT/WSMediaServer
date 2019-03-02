@@ -10,11 +10,15 @@ using System.Threading.Tasks;
 
 namespace WSMediaServer
 {
-    public partial class Service1 : ServiceBase
+    public partial class WSMediaServer : ServiceBase
     {
-        public Service1()
+
+        public WSMediaServer()
         {
-            InitializeComponent();
+            FileManager.GenerateFiles();
+            Logger.GenerateLogFile();
+            Settings.InitSettings();
+            Logger.Dispose();
         }
 
         protected override void OnStart(string[] args)
@@ -23,6 +27,8 @@ namespace WSMediaServer
 
         protected override void OnStop()
         {
+            Logger.Dispose();
         }
+
     }
 }
