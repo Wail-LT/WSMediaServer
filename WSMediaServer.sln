@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSMediaServer", "WSMediaServer\WSMediaServer.csproj", "{8F5935DD-67CD-4C6D-9B80-6008141892E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSMediaServer", "WSMediaServer\WSMediaServer.csproj", "{5743709F-1391-44C8-B984-1AFA545FE3AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8F5935DD-67CD-4C6D-9B80-6008141892E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F5935DD-67CD-4C6D-9B80-6008141892E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F5935DD-67CD-4C6D-9B80-6008141892E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F5935DD-67CD-4C6D-9B80-6008141892E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5743709F-1391-44C8-B984-1AFA545FE3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5743709F-1391-44C8-B984-1AFA545FE3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5743709F-1391-44C8-B984-1AFA545FE3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5743709F-1391-44C8-B984-1AFA545FE3AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {55734C9E-3D7E-4BB7-B401-DD5EA79BB08E}
+		SolutionGuid = {A57686C6-8232-4E75-A8C0-970F5C3CDC00}
 	EndGlobalSection
 EndGlobal

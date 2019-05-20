@@ -19,6 +19,8 @@ namespace WSMediaServer
     /// </summary>
     public static class IdleTimeFinder
     {
+        private const int DIVIDE_CONVERTER = 60000;// converte ms to min
+
         [DllImport("User32.dll")]
         private static extern bool GetLastInputInfo(ref LASTINPUTINFO plii);
 
@@ -33,7 +35,7 @@ namespace WSMediaServer
             lastInPut.cbSize = (uint)Marshal.SizeOf(lastInPut);
             GetLastInputInfo(ref lastInPut);
 
-            return ((uint)Environment.TickCount - lastInPut.dwTime)/60000;
+            return ((uint) Environment.TickCount - lastInPut.dwTime)/DIVIDE_CONVERTER;
         }
         /// <summary>
         /// Get the Last input time in milliseconds

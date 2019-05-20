@@ -9,22 +9,18 @@ namespace WSMediaServer
 {
     static class Logger
     {
-        private static readonly string LOG_FILE = "WSMediaServer."+ DateTime.UtcNow.Date.ToString("dd-mm-yyyy")+".log";
-        private static StreamWriter sWriter = new StreamWriter(Path.Combine(FileManager.FILE_PATH, LOG_FILE), true);
-
-        public static void GenerateLogFile()
-        {
-           sWriter.WriteLine("LOG WSMediaServer " + DateTime.UtcNow.Date.ToString("dd-mm-yyyy"));
-        }
+        
+        private static StreamWriter streamWriter = new StreamWriter(FileManager.LOG_FILE);
 
         public static void Log(string line)
         {
-            sWriter.WriteLine(DateTime.UtcNow.Date.ToString("u") + " : " + line);
+            streamWriter.WriteLine(DateTime.UtcNow.ToString("dd-MM-yyyy.HH-mm").ToString().Replace('/', '-') + " : " + line);
         }
 
         public static void Dispose()
         {
-            sWriter.Dispose();
+            Log("logger disposed");
+            streamWriter.Dispose();
         }
     }
 }

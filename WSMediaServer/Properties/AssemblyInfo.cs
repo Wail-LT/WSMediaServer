@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("WSMediaServer")]
-[assembly: AssemblyDescription("Service that turns off the server when not used")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("WSMediaServer")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("8f5935dd-67cd-4c6d-9b80-6008141892e3")]
+[assembly: Guid("5743709f-1391-44c8-b984-1afa545fe3aa")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
