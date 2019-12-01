@@ -13,36 +13,47 @@ namespace WSMediaServer
         private static Timer timer;
         static void Main(string[] args)
         {
-            turnOff = false;
+            try
+            {
+                turnOff = false;
 
 
-            FileManager.GenerateFiles();
-            Settings.InitSettings();
-            int delay = Settings.Delay * 60000;
+                FileManager.GenerateFiles();
+                Settings.InitSettings();
+                int delay = Settings.Delay * 60000;
 
-            timer = new System.Timers.Timer();
-            timer.Interval = delay;
-            timer.Elapsed += new ElapsedEventHandler(OnTimer);
-            timer.AutoReset = true;
+                timer = new System.Timers.Timer();
+                timer.Interval = delay;
+                timer.Elapsed += new ElapsedEventHandler(OnTimer);
+                timer.AutoReset = true;
 
-            Logger.Log("WSMediaServer Starts");
-            Settings.LogSettings();
+                Logger.Log("WSMediaServer Starts");
+                Settings.LogSettings();
 
-            timer.Start();
+                timer.Start();
 
-            CountUsers();
+                CountUsers();
 
-            Console.WriteLine("\nGlobal Idle Time : 0 min");
-            Console.WriteLine("Idle Time : 0 min");
-            Console.WriteLine("Plex Idle Time : 0 min");
+                Console.WriteLine("\nGlobal Idle Time : 0 min");
+                Console.WriteLine("Idle Time : 0 min");
+                Console.WriteLine("Plex Idle Time : 0 min");
 
-            Console.WriteLine("Number of Streaming : 0");
+                Console.WriteLine("Number of Streaming : 0");
 
-            Settings.PrintSettings();
+                Settings.PrintSettings();
 
-            SetConsoleCtrlHandler(ConsoleCtrlCheck, true);
+                SetConsoleCtrlHandler(ConsoleCtrlCheck, true);
 
-            while (!turnOff){}
+                while (!turnOff)
+                {
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Log(e.StackTrace);
+                Dispose();
+            }
+           
         }
 
         private static void OnTimer(object sender, ElapsedEventArgs e)
@@ -145,7 +156,7 @@ namespace WSMediaServer
         {
             int NbrUsers = 0;
             ITerminalServicesManager manager = new TerminalServicesManager();
-            using (ITerminalServer server = manager.GetRemoteServer("192.168.0.10"))
+            using (ITerminalServer server = manager.GetRemoteServer(Settings.Ip))
             {
                 server.Open();
                 foreach (ITerminalServicesSession session in server.GetSessions())
@@ -163,11 +174,14 @@ namespace WSMediaServer
 
         private static void Dispose()
         {
-            timer.Stop();
-            Logger.Log("timer stoped");
+            if (timer != null)
+            {
+                timer.Stop();
+                Logger.Log("timer stoped");
 
-            timer.Dispose();
-            Logger.Log("timer disposed");
+                timer.Dispose();
+                Logger.Log("timer disposed");
+            }
 
             Logger.Dispose();
         }

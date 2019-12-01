@@ -19,7 +19,8 @@ namespace WSMediaServer
             "Time:60\r\n" +
             "Token:Your_Plex_Token\r\n" +
             "Port:32400\r\n" +
-            "Delay:1";
+            "Delay:1\n" +
+            "Ip:plex_server_ip";
 
         public static void GenerateFiles()
         {
@@ -49,11 +50,8 @@ namespace WSMediaServer
                     string content = fReader.ReadToEnd().Replace("\r", "");
 
                     /* Regex to check if the file is corrupted */
-                    Regex regex = new Regex(@"^Time:[0-9]+\nToken:.+\nPort:[0-9]+\nDelay:[0-9]+$");
-                    if (!regex.IsMatch(content))
-                        return false;
-                    else
-                        return true;
+                    Regex regex = new Regex(@"^Time:[0-9]+\nToken:.+\nPort:[0-9]+\nDelay:[0-9]+\nIp:[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$");
+                    return regex.IsMatch(content);
                 }
             }
             return false;
