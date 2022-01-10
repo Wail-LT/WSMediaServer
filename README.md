@@ -1,11 +1,12 @@
 # WSMediaServer
 
-Le WSMediaServer, est une solution permettant de gérer un serveur multimédia Plex. 
-Cette solution, va permettre d'éteindre le serveur, si le temps d'inactivité de celui-ci a dépassé un certain seuil (prédéfini dans le fichier de config).
 
-Le temps d'inactivité a été défini comme étant la période durant laquelle :  
-- aucun visionnage (distant) n'est en cours   
-- aucun téléchargement n'est en cours  
-- aucune action n'a été effectué par les profils Windows connectés
+The WSMediaServer, is a solution allowing to manage a Plex multimedia server. This solution, will make it possible to switch off the server, if the time of inactivity of this one exceeded a certain threshold (predefined in the file of configuration).
 
-Si l'une des 3 conditions n'est pas validée le compteur d'inactivité est remis à 0.
+The inactivity time has been defined as the period during which :
+
+- no (remote) viewing is in progress
+- no download is in progress
+- no action has been performed by the connected Windows profiles
+
+If one of the 3 conditions is not validated the inactivity counter is reset to 0.
